@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="BioGait.DataForm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="700">
+    <Grid Margin="10" >
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition Height="200*" />
+        </Grid.RowDefinitions>
+        <Image Name="Image" Grid.Row="0" Source="Images/BioGait_Logo.jpg" HorizontalAlignment="Center"/>
+        <Border BorderBrush="DodgerBlue" BorderThickness="3,3,3,3" CornerRadius="5" Grid.Row="1">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <GradientStop Color="LightCyan" Offset="0.0" />
+                    <GradientStop Color="LightBlue" Offset="0.5" />
+                    <GradientStop Color="DarkTurquoise" Offset="1.0" />
+                </LinearGradientBrush>
+            </Border.Background>
+            <StackPanel Margin="10" HorizontalAlignment="Stretch">
+                <Label Margin="15" Content="Enter the patient details below and click on Next to continue" Foreground="Black" FontFamily="Adobe Caslon Pro" FontSize="20" HorizontalAlignment="Center"/>
+                <Label Name="Label1" Target="{Binding ElementName=txtName1}" Foreground="Crimson" FontSize="16" FontFamily="Adobe Caslon Pro"  Content="Patient Name:" HorizontalAlignment="Center"/>
+                <TextBox Name="txtName1" Width="300" Height="30" HorizontalAlignment="Center" VerticalContentAlignment="Center" PreviewTextInput="CharacterValidationTextBox"/>
+                <Label Name="Label2" Target="{Binding ElementName=listBox1}" Foreground="Crimson" FontSize="16" FontFamily="Adobe Caslon Pro"  Content="Blood Group:" HorizontalAlignment="Center"/>
+                <ComboBox Height="30" Name="Combo1" SelectionChanged="ComboBox_Selection" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="16" Width="60">
+                    <ComboBoxItem>A-</ComboBoxItem>
+                    <ComboBoxItem IsSelected="True">A+</ComboBoxItem>
+                    <ComboBoxItem>B-</ComboBoxItem>
+                    <ComboBoxItem>B+</ComboBoxItem>
+                    <ComboBoxItem>AB-</ComboBoxItem>
+                    <ComboBoxItem>AB+</ComboBoxItem>
+                    <ComboBoxItem>O-</ComboBoxItem>
+                    <ComboBoxItem>O+</ComboBoxItem>
+                </ComboBox>
+                <Label Name="Label3" Target="{Binding ElementName=txtName3}" Foreground="Crimson" FontSize="16" FontFamily="Adobe Caslon Pro"  Content="Age:" HorizontalAlignment="Center"/>
+                <TextBox Name="txtName3" Width="300" Height="30" HorizontalAlignment="Center" VerticalContentAlignment="Center" PreviewTextInput="NumberValidationTextBox"/>
+                <Label Name="Label4" Target="{Binding ElementName=txtName4}" Foreground="Crimson" FontSize="16" FontFamily="Adobe Caslon Pro"  Content="Height(in cm):" HorizontalAlignment="Center"/>
+                <TextBox Name="txtName4" Width="300" Height="30" HorizontalAlignment="Center" VerticalContentAlignment="Center" PreviewTextInput="NumberValidationTextBox"/>
+                <Label Name="Label5" Target="{Binding ElementName=txtName5}" Foreground="Crimson" FontSize="16" FontFamily="Adobe Caslon Pro"  Content="Weight(in kg):" HorizontalAlignment="Center"/>
+                <TextBox Name="txtName5" Width="300" Height="30" HorizontalAlignment="Center" VerticalContentAlignment="Center" PreviewTextInput="NumberValidationTextBox"/>
+                <Label Name="Label6" Target="{Binding ElementName=txtName6}" Foreground="Crimson" FontSize="16" FontFamily="Adobe Caslon Pro"  Content="Occupation:" HorizontalAlignment="Center"/>
+                <TextBox Name="txtName6" Width="300" Height="30" HorizontalAlignment="Center" VerticalContentAlignment="Center" PreviewTextInput="CharacterValidationTextBox"/>
+                
+                <Button x:Name="Button1" Margin="20" Width="100" Height="50" FontSize="20" FontFamily="Cambria" Content="Next->" Click="Buttonhandler1"/>
+            </StackPanel>
+
+        </Border>
+    </Grid>
+    
+</UserControl>
